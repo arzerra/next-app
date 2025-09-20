@@ -1,8 +1,16 @@
+import Link from 'next/link'
 import React from 'react'
 
 function NewUserPage() {
   return (
-    <div>NewUserPage</div>
+    <>
+    <div>
+    <Link href="/" >NewUserPage</Link>
+    </div>
+    <div>
+    <Link href="/" >Main</Link>
+    </div>
+    </>
   )
 }
 
