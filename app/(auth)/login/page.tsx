@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Login() {
   const router = useRouter();
@@ -60,6 +61,7 @@ export default function Login() {
       >
         Login
       </button>
+      <Link href="/">Back</Link>
     </div>
   );
 }

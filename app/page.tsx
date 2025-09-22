@@ -1,6 +1,9 @@
 
 // import Image from "next/image";
 import Link from "next/link";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 // import ProductCard from "./components/ProductCard";
 // import Greet from "./components/Greet";
 
@@ -20,11 +23,14 @@ export default function Home() {
 
 
   return (
+    <>
+    <Header/>
     <main>
-      <div>
-        <Link href="/admin" >Sign In</Link>
-        <Link href="/register" >Sign Up</Link>
+      <div className="flex flex-col">
+        <Link href="/login" >Sign In</Link>
       </div>
     </main>
+    <Footer/>
+    </>
   );
 }

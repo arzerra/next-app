@@ -6,7 +6,8 @@ import LogoutButton from "../components/LogoutButton";
 
 export default function AdminPage() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<any | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const checkUser = async () => {
@@ -14,26 +15,24 @@ export default function AdminPage() {
         data: { user },
       } = await supabase.auth.getUser();
 
-      if (!user || user.email !== "admin@dentalclinic.com") {
-        router.push("/login");
+      if (!user) {
+        router.replace("/login");
       } else {
         setUser(user);
       }
+      setLoading(false);
     };
 
     checkUser();
   }, [router]);
 
+  if (loading) return null;
+
   return (
     <>
-    <div>
-      {user ? (
-        <h1>Welcome Admin: {user.email}</h1>
-      ) : (
-        <p>Checking permissions...</p>
-      )}
+    <div className="flex justify-end p-4">
+      <LogoutButton />
     </div>
-    <LogoutButton />
     </>
   );
 }
