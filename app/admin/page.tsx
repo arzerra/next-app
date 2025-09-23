@@ -30,9 +30,13 @@ export default function AdminPage() {
 
   return (
     <>
-    <div className="flex justify-end p-4">
-      <LogoutButton />
+    
+    <div className="flex justify-between p-4">
+      <div className="flex">Welcome</div>
+      <div className="flex"><LogoutButton /></div>
     </div>
+
+    
     </>
   );
 }

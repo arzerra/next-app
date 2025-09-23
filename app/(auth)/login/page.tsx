@@ -57,7 +57,7 @@ export default function Login() {
       {error && <p className="text-red-500 mb-2">{error}</p>}
       <button
         onClick={login}
-        className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+        className="bg-blue-600 text-white p-2 rounded hover:bg-blue-700 cursor-pointer"
       >
         Login
       </button>
